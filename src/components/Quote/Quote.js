@@ -1,11 +1,14 @@
 import { quotes } from "./quotes";
+import styles from "./Quote.module.css";
 
 export function Quote() {
-  const { text, author } = quotes[0];
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const { text, author } = quotes[randomIndex];
+
   return (
-    <>
-      <blockquote>{text}</blockquote>
-      <cite>-- {author}</cite>
-    </>
+    <footer className={styles.quote}>
+      <blockquote className={styles.blockquote}>{text}</blockquote>
+      <cite className={styles.author}>-- {author}</cite>
+    </footer>
   );
 }
