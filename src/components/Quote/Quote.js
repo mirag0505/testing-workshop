@@ -1,3 +1,11 @@
+import { quotes } from "./quotes";
+
 export function Quote() {
-  return <blockquote>Test Quote</blockquote>;
+  const { text, author } = quotes[0];
+  return (
+    <>
+      <blockquote>{text}</blockquote>
+      <cite>-- {author}</cite>
+    </>
+  );
 }
