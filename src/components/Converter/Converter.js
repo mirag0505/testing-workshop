@@ -2,7 +2,8 @@ import styles from "./Converter.module.css";
 import { useConverter } from "./useConverter";
 
 export function Converter() {
-  const { dol, rub, updateDol, updateRub } = useConverter();
+  const { rub, usd, updateRub, updateUsd } = useConverter();
+
   return (
     <form className={styles.converter}>
       <label>
@@ -23,8 +24,8 @@ export function Converter() {
           name="usd"
           min="0"
           step="1"
-          value={dol}
-          onChange={(e) => updateDol(e.target.value)}
+          value={usd}
+          onChange={(e) => updateUsd(e.target.value)}
         />
       </label>
     </form>
