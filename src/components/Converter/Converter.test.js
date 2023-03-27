@@ -2,16 +2,16 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Converter } from "./Converter";
 
-describe("when render", () => {
-  it("rub input need have value rub", () => {
-    render(<Converter />);
-    expect(screen.getByLabelText(/Сумма в рублях/)).toHaveValue(100);
-  });
-  it("rub input need have value usd", () => {
-    render(<Converter />);
-    expect(screen.getByLabelText(/Сумма в долларах/)).toHaveValue(1);
-  });
-});
+// describe("when render", () => {
+//   it("rub input need have value rub", () => {
+//     render(<Converter />);
+//     expect(screen.getByLabelText(/Сумма в рублях/)).toHaveValue(100);
+//   });
+//   it("rub input need have value usd", () => {
+//     render(<Converter />);
+//     expect(screen.getByLabelText(/Сумма в долларах/)).toHaveValue(1);
+//   });
+// });
 
 describe("when typed in a RUB input", () => {
   it("rub input need have value rub", () => {

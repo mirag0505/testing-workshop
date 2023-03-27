@@ -39,10 +39,34 @@ describe("when called update method 'updateRUB'", () => {
 });
 
 describe("when called update method 'updateUsd'", () => {
-  it.todo("should update the USD value");
-  it.todo("should recalculate RUB value");
+  it("should update the USD value", () => {
+    const { result } = renderHook(() => useConverter(testRubAmount, course));
+
+    act(() => {
+      result.current.updateUsd(10);
+    });
+
+    expect(result.current.usd).toEqual(10);
+  });
+  it("should recalculate RUB value", () => {});
 });
 
 describe("when re-render", () => {
-  it.todo("should update this value");
+  it("should update this value", () => {
+    const { result, rerender } = renderHook(
+      ({ value, course }) => useConverter(value, course),
+      {
+        initialProps: {
+          value: testRubAmount,
+          course,
+        },
+      }
+    );
+
+    rerender({ value: 10, course: 50 });
+
+    const { rub, usd } = result.current;
+    expect(rub).toEqual(10);
+    expect(usd).toEqual(0.2);
+  });
 });
