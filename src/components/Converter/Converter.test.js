@@ -50,11 +50,11 @@ describe("when typed in a RUB input", () => {
 
 describe("when typed in a USD input", () => {
   it("rub input need have value usd", () => {
-    render(<Converter useConverter={useConverterMock} />);
+    render(<Converter />);
     const input = screen.getByLabelText(/Сумма в долларах/);
 
     userEvent.clear(input);
-    userEvent.type(input, "42");
-    expect(mockUpdateUsd).toHaveBeenCalledWith("42");
+    userEvent.type(input, "2.38");
+    expect(mockUpdateUsd).toHaveBeenCalledWith("2.38");
   });
 });
